@@ -1,42 +1,4 @@
-<!-- public/Public.html -->
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <title>Users-info</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body { font-family: sans-serif; padding: 20px; background-color: lightgrey;}
-
-        .list-operator{background: white; padding: 20px; border-radius: 8px;}
-
-        .results{display: none; grid-template-columns: 1fr 1fr; white-space: pre-line; line-height:150%;
-                background-color: lightgreen; margin-top: 20px; border-radius: 8px; width: 350px;}
-
-        .str{margin-left: 10%; margin-right: 10%;}
-
-        .print-res{color: blue; background-color: white; border-radius: 8px;
-                outline-style: auto; outline-width: 5px; padding: 10px 25px}
-        
-        @media screen and (max-width: 450px){
-            .results{grid-template-columns: 1fr; width: auto; min-width: none;}
-        }
-    </style>
-</head>
-<body>
-    <div class="list-operator">
-        <h2>Обработка массива</h2>
-        <button class="print-res" id="operate-btn">Смотреть результат</button>
-        
-        <div class="results" id = results>
-            <p class="str" id="res-first_name"></p>
-            <p class="str" id="res-ip_adress"></p>
-        </div>
-
-    </div>
-
-    <script>
-        const PeopleInfo = [{
+const PeopleInfo = [{
     "id": 1,
     "first_name": "Ichabod",
     "last_name": "Nutt",
@@ -93,6 +55,3 @@
                 document.getElementById('res-ip_adress').textContent = ''
             }
         }); 
-    </script>
-</body>
-</html>
