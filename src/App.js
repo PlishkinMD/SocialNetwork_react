@@ -1,12 +1,7 @@
-import PostsPage from './2_sprint/My_page.jsx';
+import {SocNetRouter} from './3_sprint/index.js';
 
 function App() {
-  return (
-    <div className="App">
-      <PostsPage />
-    </div>
-  );
+  return <SocNetRouter/>;
 }
 
-export default App; 
-
+export default App;
