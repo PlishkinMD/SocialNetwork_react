@@ -1,0 +1,30 @@
+.page_div{
+     padding: 20px;
+      height: 100vh;
+    box-sizing: border-box;
+}
+
+.navbar{
+    margin-bottom: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: #58a6ff;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 6px;
+    border: solid 2px #58a6ff;
+}
+
+.icon{
+    color: #58a6ff;
+    padding-inline: 10px
+}
+
+.nav_links{
+    color: green
+}

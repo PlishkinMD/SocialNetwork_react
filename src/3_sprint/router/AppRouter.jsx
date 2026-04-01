@@ -3,9 +3,12 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchUsers } from '../features/users/UsersSlice';
 import UsersPage from '../pages/UsersPage';
-import UserPage from '../pages/UserPage';
+import UserPage from '../pages/UserPage/UserPage';
 import PostsPage from '../pages/PostsPage';
-import PostPage from '../pages/PostPage';
+import PostPage from '../pages/PostPage/PostPage';
+import styles from './AppRouter.module.css'
+import { FaUsers } from "react-icons/fa6";
+import { BsFilePost } from "react-icons/bs";
 
 function AppRouter() {
   const dispatch = useDispatch();
@@ -14,10 +17,10 @@ function AppRouter() {
   }, [dispatch]);
 
   return (
-    <div style={{ padding: '20px', height: '100vh', boxSizing: 'border-box' }}>
-      <nav style={{ marginBottom: '20px', display: 'flex', gap: '20px' }}>
-        <a href="/users" style={{ textDecoration: 'none', color: '#007bff' }}>👥 Пользователи</a>
-        <a href="/posts" style={{ textDecoration: 'none', color: '#007bff' }}>📝 Посты</a>
+    <div className={styles.page_div}>
+      <nav className={styles.navbar}>
+        <a href="/users"><FaUsers className={styles.icon}/>Пользователи</a>
+        <a href="/posts"><BsFilePost className={styles.icon}/>Посты</a>
       </nav>
       
       <Routes>
@@ -26,7 +29,6 @@ function AppRouter() {
         <Route path="/users/:id" element={<UserPage />} />
         <Route path="/posts" element={<PostsPage />} />
         <Route path="/posts/:id" element={<PostPage />} />
-        <Route path="*" element={<div style={{ padding: '40px', textAlign: 'center' }}>Страница не найдена</div>} />
       </Routes>
     </div>
   );

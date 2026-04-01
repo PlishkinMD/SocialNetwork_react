@@ -7,11 +7,5 @@ export const socNetStore = configureStore({
     users: usersReducer,
     posts: postsReducer,
   },
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware({
-      serializableCheck: {
-        ignoredActions: ['persist/PERSIST'],
-      },
-    }),
 });
 

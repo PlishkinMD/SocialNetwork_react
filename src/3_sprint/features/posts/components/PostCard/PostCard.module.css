@@ -1,0 +1,11 @@
+.post_in_list{
+    border: solid 1px white;
+    padding: 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #161b22;
+}
+
+.post_in_list:hover {
+  background-color: #2B3036;
+}
