@@ -1,29 +1,33 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 export const fetchPosts = createAsyncThunk(
-  'posts/fetchAll',
+  "posts/fetchAll",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+      const response = await fetch(
+        "https://jsonplaceholder.typicode.com/posts",
+      );
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       return await response.json();
     } catch (error) {
       return rejectWithValue(error.message);
     }
-  }
+  },
 );
 
 export const fetchPostById = createAsyncThunk(
-  'posts/fetchById',
+  "posts/fetchById",
   async (postId, { rejectWithValue }) => {
     try {
-      const response = await fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`);
+      const response = await fetch(
+        `https://jsonplaceholder.typicode.com/posts/${postId}`,
+      );
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       return await response.json();
     } catch (error) {
       return rejectWithValue(error.message);
     }
-  }
+  },
 );
 
 const initialState = {
@@ -38,7 +42,7 @@ const initialState = {
 };
 
 const postsSlice = createSlice({
-  name: 'posts',
+  name: "posts",
   initialState,
   reducers: {
     setCurrentPage: (state, action) => {
@@ -50,13 +54,31 @@ const postsSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchPosts.pending, (state) => { state.loading = true; state.error = null; })
-      .addCase(fetchPosts.fulfilled, (state, action) => { state.loading = false; state.items = action.payload; })
-      .addCase(fetchPosts.rejected, (state, action) => { state.loading = false; state.error = action.payload; })
-      
-      .addCase(fetchPostById.pending, (state) => { state.loading = true; state.error = null; })
-      .addCase(fetchPostById.fulfilled, (state, action) => { state.loading = false; state.currentItem = action.payload; })
-      .addCase(fetchPostById.rejected, (state, action) => { state.loading = false; state.error = action.payload; });
+      .addCase(fetchPosts.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchPosts.fulfilled, (state, action) => {
+        state.loading = false;
+        state.items = action.payload;
+      })
+      .addCase(fetchPosts.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      })
+
+      .addCase(fetchPostById.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchPostById.fulfilled, (state, action) => {
+        state.loading = false;
+        state.currentItem = action.payload;
+      })
+      .addCase(fetchPostById.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      });
   },
 });
 

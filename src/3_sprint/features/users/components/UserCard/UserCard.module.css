@@ -1,11 +1,11 @@
-.user_in_list{
-    padding: 12px;
-    border: solid 1px white;
-    border-radius: 6px;
-    cursor: pointer;
-    background-color: #161b22;
+.user_in_list {
+  padding: 12px;
+  border: solid 1px white;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #161b22;
 }
 
-.user_in_list:hover{
-    background-color: #2B3036;
+.user_in_list:hover {
+  background-color: #2b3036;
 }

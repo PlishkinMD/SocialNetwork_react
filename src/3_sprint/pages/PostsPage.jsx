@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchPosts } from '../features/posts/PostsSlice';
-import PostsList from '../features/posts/components/PostsList/PostsList';
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchPosts } from "../features/posts/PostsSlice";
+import PostsList from "../features/posts/components/PostsList/PostsList";
 
 function PostsPage() {
   const dispatch = useDispatch();

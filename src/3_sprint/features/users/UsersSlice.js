@@ -1,29 +1,33 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 export const fetchUsers = createAsyncThunk(
-  'users/fetchAll',
+  "users/fetchAll",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await fetch('https://jsonplaceholder.typicode.com/users');
+      const response = await fetch(
+        "https://jsonplaceholder.typicode.com/users",
+      );
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       return await response.json();
     } catch (error) {
       return rejectWithValue(error.message);
     }
-  }
+  },
 );
 
 export const fetchUserById = createAsyncThunk(
-  'users/fetchById',
+  "users/fetchById",
   async (userId, { rejectWithValue }) => {
     try {
-      const response = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}`);
+      const response = await fetch(
+        `https://jsonplaceholder.typicode.com/users/${userId}`,
+      );
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       return await response.json();
     } catch (error) {
       return rejectWithValue(error.message);
     }
-  }
+  },
 );
 
 const initialState = {
@@ -34,7 +38,7 @@ const initialState = {
 };
 
 const usersSlice = createSlice({
-  name: 'users',
+  name: "users",
   initialState,
   reducers: {
     clearCurrentUser: (state) => {
@@ -43,13 +47,31 @@ const usersSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchUsers.pending, (state) => { state.loading = true; state.error = null; })
-      .addCase(fetchUsers.fulfilled, (state, action) => { state.loading = false; state.items = action.payload; })
-      .addCase(fetchUsers.rejected, (state, action) => { state.loading = false; state.error = action.payload; })
+      .addCase(fetchUsers.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchUsers.fulfilled, (state, action) => {
+        state.loading = false;
+        state.items = action.payload;
+      })
+      .addCase(fetchUsers.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      })
 
-      .addCase(fetchUserById.pending, (state) => { state.loading = true; state.error = null; })
-      .addCase(fetchUserById.fulfilled, (state, action) => { state.loading = false; state.currentItem = action.payload; })
-      .addCase(fetchUserById.rejected, (state, action) => { state.loading = false; state.error = action.payload; });
+      .addCase(fetchUserById.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(fetchUserById.fulfilled, (state, action) => {
+        state.loading = false;
+        state.currentItem = action.payload;
+      })
+      .addCase(fetchUserById.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      });
   },
 });
 

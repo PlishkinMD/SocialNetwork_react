@@ -1,14 +1,16 @@
-.error_message{color: red;}
-
-.user_div{
-    max-width: 500px;
-    background-color: #161b22;
-    border-radius: 15px;
-    padding: 30px;
+.error_message {
+  color: red;
 }
 
-.back_button{
-    margin-left: 0;
-    margin-top: 0;
-    cursor: pointer;
+.user_div {
+  max-width: 500px;
+  background-color: #161b22;
+  border-radius: 15px;
+  padding: 30px;
+}
+
+.back_button {
+  margin-left: 0;
+  margin-top: 0;
+  cursor: pointer;
 }

@@ -1,23 +1,40 @@
-body{background-color: #0d1117;}
-
-h2{color: #52d773;}
-
-h3{color: #a5d6ff; margin: '0 0 8px 0'}
-
-p{color: #a5d6ff; margin: '0 0 10px 0'}
-
-small{color: #ffab70;}
-
-strong{color: #ffab70;}
-
-button{color: #85e89d;
-    background-color: #24292E; 
-    border-radius: 8px;
-    outline-style: none;
-    border-color: #85e89d;
-    outline-width: 5px;
-    padding: 10px 25px;
-    margin: 15px;
+body {
+  background-color: #0d1117;
 }
 
-span{color: #85e89d}
+h2 {
+  color: #52d773;
+}
+
+h3 {
+  color: #a5d6ff;
+  margin: "0 0 8px 0";
+}
+
+p {
+  color: #a5d6ff;
+  margin: "0 0 10px 0";
+}
+
+small {
+  color: #ffab70;
+}
+
+strong {
+  color: #ffab70;
+}
+
+button {
+  color: #85e89d;
+  background-color: #24292e;
+  border-radius: 8px;
+  outline-style: none;
+  border-color: #85e89d;
+  outline-width: 5px;
+  padding: 10px 25px;
+  margin: 15px;
+}
+
+span {
+  color: #85e89d;
+}

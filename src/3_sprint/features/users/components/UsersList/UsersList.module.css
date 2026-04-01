@@ -1,13 +1,13 @@
-.users_list{
-    display: grid;
-    gap: 10px;
-    max-width: 600px;
+.users_list {
+  display: grid;
+  gap: 10px;
+  max-width: 600px;
 }
 
-.loading_message{
-    color: white;
+.loading_message {
+  color: white;
 }
 
-.error_message{
-    color: red;
+.error_message {
+  color: red;
 }
