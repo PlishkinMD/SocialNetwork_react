@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, Link } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { fetchUsers } from "../features/users/UsersSlice";
@@ -19,14 +19,14 @@ function AppRouter() {
   return (
     <div className={styles.page_div}>
       <nav className={styles.navbar}>
-        <a href="/users">
+        <Link to="/users">
           <FaUsers className={styles.icon} />
           Пользователи
-        </a>
-        <a href="/posts">
+        </Link>
+        <Link to="/posts">
           <BsFilePost className={styles.icon} />
           Посты
-        </a>
+        </Link>
       </nav>
 
       <Routes>
