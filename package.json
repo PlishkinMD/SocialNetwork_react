@@ -1,8 +1,8 @@
 {
-  "name": "sandbox",
+  "name": "socialnetwork-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://PlishkinMD.github.io/sandbox",
+  "homepage": "https://plishkinmd.github.io/SocialNetwork_react",
   "dependencies": {
     "@reduxjs/toolkit": "^2.11.2",
     "@testing-library/dom": "^10.4.1",
